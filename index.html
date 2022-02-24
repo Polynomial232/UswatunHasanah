@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/tailwind.css">
+    <link rel="stylesheet" href="./src/native.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Uswatuh Hasannah</title>
+    <script src="https://kit.fontawesome.com/8f4f503e52.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav
+        class="bg-white md:bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 w-full z-50 fixed md:top-0 border-t-4 md:border-0" id="navbar">
+        <div class="container flex flex-col lg:flex-row md:flex-row justify-between items-center mx-auto text-lg md:text-base">
+            <a href="#" class="flex">
+                <img src="logo.png" alt="" class="mr-3 h-10" viewBox="0 0 52 72">
+                <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Uswatuh
+                    Hasannah</span>
+            </a>
+            <div class="w-full md:block md:w-auto" id="mobile-menu">
+                <ul class="flex justify-between items-center md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-4 text-gray-50 bg-emerald-600 rounded md:bg-transparent md:text-gray-700 md:hover:text-emerald-600 md:p-0 dark:text-white"
+                            aria-current="page">
+                            <span class="md:hidden">
+                                <i class="fa-solid fa-house block"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Beranda
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tentang"
+                            class="block py-2 px-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            <span class="md:hidden">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Tentang
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pengumuman"
+                            class="block py-2 px-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            <span class="md:hidden">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Pengumuman
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#agenda"
+                            class="block py-2 px-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            <span class="md:hidden">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Agenda
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#layanan"
+                            class="block py-2 px-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            <span class="md:hidden">
+                                <i class="fa-regular fa-circle-user"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Layanan
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#berita"
+                            class="block py-2 px-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-emerald-600 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            <span class="md:hidden">
+                                <i class="fa-regular fa-newspaper"></i>
+                            </span>
+                            <span class="hidden md:block">
+                                Berita
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full h-screen bg-no-repeat bg-cover bg-top relative"
+        style="background-image: url(https://images.unsplash.com/photo-1570715746786-e7ca46b1e50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vc3F1ZXxlbnwwfHwwfHw%3D)">
+        <div class="absolute right-0 top-20" id="jadwal">
+            <div id="shalat" class="flex flex-col justify-center items-center bg-slate-100/40 py-2 pr-3 pl-5 rounded-l-md">
+                <div class="flex justify-between items-center w-full flex-col md:flex-row">
+                    <div id="day"></div>
+                    <div id="date"></div>
+                    <div id="time" class="font-bold"></div>
+                </div>
+                <hr class="border-1 w-full my-2">
+                <div class="flex gap-3 flex-col md:flex-row">
+                    <div class="flex flex-col justify-center items-center font-bold">Imsak  <span class="font-normal" id="imsak">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Subuh  <span class="font-normal" id="subuh">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Dhuha  <span class="font-normal" id="dhuha">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Dzuhur <span class="font-normal" id="dzuhur">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Ashar  <span class="font-normal" id="ashar">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Maghrib <span class="font-normal" id="maghrib">00:00</span></div>
+                    <div class="flex flex-col justify-center items-center font-bold">Isya  <span class="font-normal" id="isya">00:00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="tentang" class="flex flex-col justify-center items-center pt-24 lg:mb-40 lg:mx-36 mx-10">
+        <h1 class="text-4xl font-bold font-mono tracking-wide text-emerald-600">Tentang</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-center justify-center items-center my-1 md:my-5">
+            <p class="lg:text-right md:text-center md:p-10 lg:order-first order-last">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aut officiis nisi
+                placeat. Ducimus perspiciatis totam provident minima porro aliquam nam inventore expedita assumenda sit,
+                cupiditate odio adipisci recusandae esse nihil odit libero ipsum voluptatibus autem quo tempore ea
+                minus. Modi quidem, eveniet fugit ut doloribus suscipit illum. Unde veniam obcaecati optio placeat quo
+                itaque magni possimus quisquam suscipit laborum!<p>
+            <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/07/shutterstock_1079594186.jpg" alt="" class="shadow-emerald-600/30 shadow-xl rounded-xl my-3 md:my-0">
+        </div>
+    </section>
+
+    <section id="pengumuman" class="flex flex-col justify-center items-center pt-24 lg:mb-40 mx-10">
+        <h1 class="text-4xl font-bold font-mono tracking-wide text-emerald-600 mb-10">Pengumuman</h1>
+        <div id="card" class="flex justify-center justify-items-center items-center lg:justify-around w-full flex-col md:flex-row flex-wrap">
+            
+            <div class="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                <img class="w-full h-56 object-cover object-top"
+                    src="https://www.grahanusantara.co.id/dir/gambar/cow-goat_57812-2.jpg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Qurban</div>
+                    <p class="text-gray-700 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                        perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                <img class="w-full h-56 object-cover object-top"
+                    src="https://www.grahanusantara.co.id/dir/gambar/cow-goat_57812-2.jpg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Qurban</div>
+                    <p class="text-gray-700 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                        perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                <img class="w-full h-56 object-cover object-top"
+                    src="https://www.grahanusantara.co.id/dir/gambar/cow-goat_57812-2.jpg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Qurban</div>
+                    <p class="text-gray-700 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                        perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="agenda" class="flex flex-col justify-center items-center pt-24 pb-10 lg:px-36 px-10 bg-cover bg-left bg-fixed" style="background-image: url('https://lp-cms-production.imgix.net/2019-06/0a9752aecfc85655705f557fff4a2aed-masjid-selat-melaka.jpg');">
+        <h1 class="text-4xl font-bold font-mono tracking-wide text-white mb-5">Agenda</h1>
+        <iframe sc="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FJakarta&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=id&title=Agenda%20Masjid%20Uswatuh%20Hasannah&src=ZGFmZmFkaGl5YTUwQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTAyOTg5NDg1Njk3MzYwMjg1ODk4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4uaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%237986CB&color=%237986CB&color=%23202124&color=%237986CB" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </section>
+
+    <section id="layanan" class="flex flex-col justify-center items-center pt-24 lg:mb-40 lg:mx-36 mx-10">
+        <h1 class="text-4xl font-bold font-mono tracking-wide text-emerald-600 mb-10">Layanan</h1>
+        <div class="flex flex-col lg:grid lg:grid-cols-3 my-1 md:my-5  justify-center items-center ">
+            <div class="grid lg:grid-cols-3 gap-3 md:p-10 lg:order-first order-last col-span-2 ">
+                
+                <div class="rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                    <img class="w-full h-36 object-cover object-top"
+                        src="https://cianjurtoday.com/wp-content/uploads/2021/05/IMG-20210510-WA0010.jpg" alt="">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Infaq</div>
+                        <p class="text-gray-700 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                    <img class="w-full h-36 object-cover object-top"
+                        src="https://cianjurtoday.com/wp-content/uploads/2021/05/IMG-20210510-WA0010.jpg" alt="">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Infaq</div>
+                        <p class="text-gray-700 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded overflow-hidden shadow-lg hover:scale-105 ease-linear duration-200">
+                    <img class="w-full h-36 object-cover object-top"
+                        src="https://cianjurtoday.com/wp-content/uploads/2021/05/IMG-20210510-WA0010.jpg" alt="">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Infaq</div>
+                        <p class="text-gray-700 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                            perferendis eaque, exercitationem praesentium nihil.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bg-slate-700 px-6 py-7 text-white text-sm rounded-xl lg:col-span-1 md:col-span-2 mb-3">
+                <h2 class="text-xl font-bold mb-4">Kontak</h2>
+                <p><span class="font-bold">Alamat:</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, laborum!</p>
+                <p><span class="font-bold">Nomor:</span> +62-435-4422-6655</p>
+                <p><span class="font-bold">Email:</span> email@gmail.com</p>
+
+                <button class="bg-red-600 w-full rounded-2xl font-bold py-2 mt-4 hover:bg-emerald-600 duration-200 ease-linear tracking-wider">Yuk Berinfaq</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 500) {
+                document.getElementById("navbar").classList.remove("md:bg-transparent");
+            } else {
+                document.getElementById("navbar").classList.add("md:bg-transparent");
+            }
+        }
+
+        $(document).ready(function () {
+            $('ul.navbar > li').click(function (e) {
+                $('ul.navbar > li')
+                    .removeClass('text-white');
+                $(this).addClass('text-white');
+            });
+        });
+
+        var now = new Date()
+        now = `${now.getFullYear()}-${('0' + (now.getMonth()+1)).slice(-2)}-${now.getDate()}`
+
+        $.ajax({
+            url: 'https://api.banghasan.com/sholat/format/json/jadwal/kota/667/tanggal/'+now,
+            type: 'get',
+            dataType: 'json',
+            success: function (e) {
+                var jadwal = e.jadwal.data
+
+                $('#imsak').text(jadwal.imsak)
+                $('#subuh').text(jadwal.subuh)
+                $('#dhuha').text(jadwal.dhuha)
+                $('#dzuhur').text(jadwal.dzuhur)
+                $('#ashar').text(jadwal.ashar)
+                $('#maghrib').text(jadwal.maghrib)
+                $('#isya').text(jadwal.isya)
+
+            }
+        })
+        
+        const getCurrentTimeDate = () => {
+
+            let currentTimeDate = new Date();
+
+            var weekday = new Array(7);
+            weekday[0] = "Minggu";
+            weekday[1] = "Senin";
+            weekday[2] = "Selasa";
+            weekday[3] = "Rabu";
+            weekday[4] = "Kamis";
+            weekday[5] = "Jumat";
+            weekday[6] = "Sabtu";
+
+            var month = new Array();
+            month[0] = "Januari";
+            month[1] = "Februari";
+            month[2] = "Maret";
+            month[3] = "April";
+            month[4] = "Mei";
+            month[5] = "Juni";
+            month[6] = "Juli";
+            month[7] = "Agustus";
+            month[8] = "September";
+            month[9] = "Ocotber";
+            month[10] = "November";
+            month[11] = "Desember";
+
+            var hours   =  currentTimeDate.getHours();
+
+            var minutes =  currentTimeDate.getMinutes();
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+
+            var seconds =  currentTimeDate.getSeconds();
+            seconds = seconds < 10 ? '0'+seconds : seconds;
+
+            var currentTime = `${hours}:${minutes}:${seconds}`;
+            var currentDay = weekday[currentTimeDate.getDay()] + ',';
+
+            var currentDate  = currentTimeDate.getDate();
+            var currentMonth = month[currentTimeDate.getMonth()];
+            var CurrentYear = currentTimeDate.getFullYear();
+
+            var fullDate = `${currentDate} ${currentMonth} ${CurrentYear}`;
+
+
+            $("#time").text(currentTime);
+            $("#day").text(currentDay);
+            $("#date").text(fullDate);
+
+            setTimeout(getCurrentTimeDate, 1000);
+
+        }
+        getCurrentTimeDate();
+    </script>
+
+</body>
+
+</html>

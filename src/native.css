@@ -1,0 +1,32 @@
+#mobile-menu ul li{
+    position: relative;
+}
+
+#mobile-menu ul li::before{
+    position: absolute;
+    width: 100%;
+    bottom: -0.9rem;
+    left: 50%;
+    content: '•';
+}
+
+#mobile-menu ul li:hover::before{
+    color: #059669;
+    bottom: -1rem;
+    transition: .3s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+    #mobile-menu ul li::before{
+        content: '';
+        display: hidden;
+    }
+    
+    #navbar{
+        bottom: 0;
+    }
+
+    #jadwal{
+        top: 0;
+    }
+}
