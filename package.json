@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "start-tailwind": "npx tailwindcss -i ./resources/input.css -o ./src/tailwind.css --watch",
+    "start-tailwind": "npx tailwindcss -i ./resources/input.css -o ./src/css/tailwind.css --watch",
     "build-tailwind": "npx tailwindcss -o tailwind.min.css --minify"
   },
   "keywords": [],
