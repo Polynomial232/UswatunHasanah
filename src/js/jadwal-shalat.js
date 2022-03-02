@@ -1,5 +1,5 @@
 var now = new Date()
-now = `${now.getFullYear()}-${('0' + (now.getMonth()+1)).slice(-2)}-${now.getDate()}`
+now = `${now.getFullYear()}-${('0' + (now.getMonth()+1)).slice(-2)}-${('0' + (now.getDate())).slice(-2)}`
 
 $.ajax({
     url: 'https://api.banghasan.com/sholat/format/json/jadwal/kota/667/tanggal/' + now,
