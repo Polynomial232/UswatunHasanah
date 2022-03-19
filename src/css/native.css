@@ -19,12 +19,16 @@ h1{
     left: 50%;
     content: '•';
 }
+.actives a{
+    color: #059669;
+}
 
 #mobile-menu ul li:hover::before{
     color: #059669;
     bottom: -1rem;
     transition: .3s ease-in-out;
 }
+
 
 @media screen and (max-width: 800px) {
     #mobile-menu ul li::before{
@@ -41,5 +45,10 @@ h1{
     }
     #details-footer{
         text-align: center;
+    }
+    .actives a{
+        border-radius: 6px;
+        background-color: #059669;
+        color: white;
     }
 }

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
-  "type": "module",
   "scripts": {
     "start-tailwind": "npx tailwindcss -i ./resources/input.css -o ./src/css/tailwind.css --watch",
     "build-tailwind": "npx tailwindcss -o tailwind.min.css --minify"
@@ -18,6 +17,6 @@
   },
   "dependencies": {
     "firebase": "^9.6.7",
-    "module": "^1.2.5"
+    "module": "^1.0.0"
   }
 }

@@ -126,8 +126,8 @@
     </section>
 
     <section id="pengumuman" class="flex flex-col justify-center items-center pt-24 lg:mb-40 mx-10 mb-10">
-        <h1 class="text-4xl font-bold text-emerald-600 mb-10" data-aos="fade-up">Pengumuman</h1>
-        <div id="card" class="flex flex-col lg:grid lg:grid-cols-4 my-1 md:my-5  justify-center gap-2">
+        <h1 class="text-4xl font-bold text-emerald-600 mb-10" data-aos="fade-up">Berita</h1>
+        <div id="list-berita" class="flex flex-col lg:grid lg:grid-cols-4 my-1 md:my-5  justify-center gap-2">
 
         </div>
     </section>
@@ -173,16 +173,16 @@
     <script type="module" src="../src/js/firebase-config.js"></script>
     <script type="module">
         import { $_GET } from '../src/js/GET.js'
-        import { ReadPengumuman, readDataPengumuman } from '../src/js/firebase-config.js'
+        import { ReadBerita, readDataBerita } from '../src/js/firebase-config.js'
 
         var id = $_GET()
 
         if(id == null){
             $('#main').addClass('hidden')
-            readDataPengumuman()
+            readDataBerita()
         }else{
             $('#pengumuman').addClass('hidden')
-            ReadPengumuman(id)
+            ReadBerita(id)
         }
         nav_admin()
     </script>
