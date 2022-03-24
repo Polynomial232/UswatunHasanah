@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="../logo.ico">
+
     <link rel="stylesheet" href="../src/css/tailwind.css">
     <link rel="stylesheet" href="../src/css/native.css">
     <link rel="stylesheet" href="../src/css/owl.carousel.min.css">
@@ -68,6 +71,7 @@
         </div>
     </div>
 
+    <script src="./src/js/files.js"></script>
     <script type="module" src="../src/js/firebase-config.js"></script>
     <script type="module">
         import {
@@ -85,6 +89,15 @@
         }
         from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js";
         const db = getFirestore();
+
+        import {
+            getStorage,
+            ref,
+            getDownloadURL,
+            uploadBytesResumable,
+            listAll
+        } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+        const storage = getStorage();
 
         async function readData(){
             var table = ``
@@ -105,15 +118,13 @@
                         ${tanggal}
                     </td>
                     <td class="py-4 px-6 text-sm text-gray-500 dark:text-gray-400">
-                        <a href="../Layanan/?${Layanan.id}" class="text-blue-600 hover:underline">
                         ${Layanan.data().Judul}
-                        </a>
                     </td>
                     <td class="py-4 px-6 text-sm text-gray-500 dark:text-gray-400">
                         ${Layanan.data().Layanan}
                     </td>
                     <td class="py-4 px-6 text-sm font-medium text-right">
-                        <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="../Layanan/?${Layanan.id}" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     </td>
                 </tr>
                 `
@@ -122,25 +133,51 @@
         }
 
         async function input(){
-            var ref = collection(db, "Layanan");
-            const docref = await addDoc(
-                ref, {
-                    Gambar: $('#gambar').val(),
-                    Judul: $('#judul').val(),
-                    Layanan: $('#isi').val(),
-                    Update: Timestamp.fromDate(new Date()).toDate()
+            var refs = collection(db, "Layanan");
+            var Img = files[0];
+            var metaData;
+
+            if(Img != null){
+                var extention = GetExtName(files[0]);
+                var name = GetFileName(files[0]);
+                var ImgName = Timestamp.fromDate(new Date()).seconds + extention;
+                metaData = {
+                    contentType: Img.type
                 }
-            )
-            .then(() => {
-                location.reload();
-            })
+            }
+            
+            if(Img != null){
+                const storageRef = ref(storage, "app/Layanan/" + ImgName)
+                const UploadTask = uploadBytesResumable(storageRef, Img, metaData, metaData)
+
+                UploadTask.on('state-changed',
+                (snapshot) => {
+                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log("Upload "+progress+" %")
+                },
+                (error) => {
+                    alert("error")
+                },
+                () => {
+                    location.reload();
+                })
+                const docref = await addDoc(
+                    refs, {
+                        Gambar: ImgName,
+                        Judul: $('#judul').val(),
+                        Layanan: $('#isi').val(),
+                        Update: Timestamp.fromDate(new Date()).toDate()
+                    }
+                )
+                .then(() => {
+                })
+            }
         }
 
+        inputFile();
         let Btnadd = document.getElementById("kirim");
         Btnadd.addEventListener("click", input);
-
         window.onload = readData
     </script>
-    <script src="../src/js/jadwal-shalat.js"></script>
 </body>
 </html>

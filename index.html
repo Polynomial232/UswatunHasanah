@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.ico">
+    
     <link rel="stylesheet" href="src/css/tailwind.css"> <!-- <link rel="stylesheet" href="src/css/tailwind.min.css"> -->
     <link rel="stylesheet" href="src/css/native.css">
     <link rel="stylesheet" href="src/css/owl.carousel.min.css">
@@ -107,7 +109,7 @@
     </nav>
 
     <div class="w-full h-screen bg-no-repeat bg-cover bg-top relative"
-        style="background-image: url(https://images.unsplash.com/photo-1570715746786-e7ca46b1e50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vc3F1ZXxlbnwwfHwwfHw%3D)">
+        style="" id="banner">
         <div class="absolute right-0 top-20" id="jadwal">
             <div id="shalat"
                 class="flex flex-col justify-center items-center bg-slate-100/40 py-2 pr-3 pl-5 rounded-l-md">
@@ -135,6 +137,10 @@
                 </div>
             </div>
         </div>
+        <div class="absolute right-1/2 bottom-3 translate-x-1/2">
+            <a href="./admin/banner.html" class="font-bold text-emerald-600 text-2xl ml-2 hover:scale-105 duration-200 ease-in-out admin bg-white px-3 py-2 rounded-md"><i
+                class="fa-solid fa-pen-to-square"></i> Ganti Banner</a>
+        </div>
     </div>
 
     <section id="tentang" class="flex flex-col justify-center items-center pt-24 lg:mb-40 lg:mx-36 mx-10"
@@ -148,7 +154,7 @@
             <p class="lg:text-right md:text-center md:p-10 lg:order-first order-last" id="details-footer">
                 <span id="tentang-text"></span>
             </p>
-            <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/07/shutterstock_1079594186.jpg" alt=""
+            <img src="" alt="" id="tentang-gambar"
                 class="shadow-emerald-600/30 shadow-xl rounded-xl my-3 md:my-0">
         </div>
     </section>
@@ -189,7 +195,7 @@
                 <p><span class="font-bold">Nomor:</span> <span id="telp"></span></p>
                 <p><span class="font-bold">Email:</span> <span id="email"></span></p>
 
-                <button
+                <button onclick="window.location.href='https://wa.me/6281314343935?text=Assalamualaikum,%20Saya%20ingin%20berinfaq'"
                     class="bg-red-600 w-full rounded-xl font-bold py-2 mt-4 hover:bg-emerald-600 duration-200 ease-linear tracking-wider hover:scale-105 hover:tracking-widest">Yuk
                     Berinfaq</button>
             </div>
@@ -251,12 +257,14 @@
         import { 
             readDataPengumuman, 
             readDataBerita, 
-            readDataLayanan 
+            readDataLayanan,
+            banner
         } from './src/js/firebase-config.js'
 
         readDataPengumuman('pengumuman')
         readDataBerita('Berita')
         readDataLayanan('Layanan')
+        banner()
         nav_admin()
     </script>
 </body>
